@@ -1,6 +1,4 @@
 import os
-import asyncio
-import logging
 from dotenv import load_dotenv
 
 from typing import Literal
@@ -12,8 +10,8 @@ tavily_api_key = os.getenv("TAVILY_API_KEY")
 
 tavily_client = TavilyClient(api_key=tavily_api_key)
 
-chunks_per_source = 3
-max_results = 5
+chunks_per_source = 4
+max_results = 10
 time_range = 15
 #include_images = False
 
@@ -55,7 +53,7 @@ def deduplicate_and_format(search_results):
 @tool(parse_docstring=True)
 def search_tavily(
     queries: list[str],
-    topic: Literal["news", "finance", "general"] = "finance",
+    topic: Literal["news", "finance", "general"] = "general",
     include_images: bool = False,
 ) -> str:
     """Search the web using the Tavily API.

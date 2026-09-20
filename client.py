@@ -1,4 +1,3 @@
-import asyncio
 from agents import agent
 from IPython.display import Markdown as md
 
@@ -12,9 +11,9 @@ def ask_agent(user_topic):
 
     summary = md(response.content)
 
-    print(response.content)
+    #print(response.content)
 
-    return summary
+    return response.content
 
 
 if __name__ == '__main__':

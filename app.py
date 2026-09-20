@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory
+from client import ask_agent
 
 app = Flask(__name__)
 
@@ -17,10 +18,10 @@ def submit():
     user_text = data.get("text", "")
 
     # ---- Do whatever processing you want here ----
-    result = user_text.upper()  # example: just uppercase it
+    result = ask_agent(user_text)
     # ------------------------------------------------
 
     return jsonify({"result": result})
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=False, port=5000)

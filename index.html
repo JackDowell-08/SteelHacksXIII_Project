@@ -2,14 +2,15 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Send Text to Python</title>
+  <title>Freddy Financial</title>
 </head>
 <body style="font-family: sans-serif; max-width: 500px; margin: 40px auto;">
-  <h2>Send text to the backend</h2>
-  <textarea id="userInput" rows="5" style="width:100%;" placeholder="Type something..."></textarea>
+  <h2>Welcome to Freddy Financial</h2>
+  <textarea id="userInput" rows="5" style="width:100%;" placeholder="Ask Freddy"></textarea>
   <br><br>
   <button onclick="sendText()">Submit</button>
   <h3>Response:</h3>
+  <p id="loading" style="display:none;">Uploading...</p>
   <p id="responseArea"></p>
 
   <script src="script.js"></script>
