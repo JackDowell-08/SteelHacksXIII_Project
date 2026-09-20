@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    # Serves the HTML page below
     return send_from_directory(".", "index.html")
 
 @app.route("/script.js")
@@ -17,9 +16,7 @@ def submit():
     data = request.get_json()
     user_text = data.get("text", "")
 
-    # ---- Do whatever processing you want here ----
     result = ask_agent(user_text)
-    # ------------------------------------------------
 
     return jsonify({"result": result})
 
